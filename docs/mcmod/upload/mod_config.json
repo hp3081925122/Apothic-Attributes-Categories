@@ -1,0 +1,29 @@
+{
+  "name": "神化属性：分类",
+  "ename": "Apothic Attributes Categories",
+  "intro": "为神化属性（Apothic Attributes）的属性界面添加一体式分类面板与滑块，支持自定义分类、图标路径与热重载，兼容白名单模组。",
+  "modid": "apothic_attributes_categories",
+  "cfprojectid": "1825646",
+  "core": "实用",
+  "elements": ["改进", "国创"],
+  "platforms": ["JAVA版 (JAVA Edition)"],
+  "versions": {
+    "Forge": ["1.20.1"],
+    "NeoForge": ["26.1.2", "1.21.1"]
+  },
+  "links": [
+    ["curseforge", "https://www.curseforge.com/minecraft/mc-mods/apothic-attributes-categories", ""],
+    ["github", "https://github.com/hp3081925122/Apothic-Attributes-Categories", ""]
+  ],
+  "client": "需装",
+  "server": "可选",
+  "status": "活跃",
+  "source": "开源",
+  "authors": [{"id": 39471, "name": "AI仙人", "roles": ["owner"]}],
+  "content_file": "intro.html",
+  "cover_file": "cover.png",
+  "injectCover": true,
+  "images": {
+    "showcase_zh": "showcase_zh.png"
+  }
+}

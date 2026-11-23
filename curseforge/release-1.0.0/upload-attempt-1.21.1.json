@@ -1,0 +1,28 @@
+{
+  "startedUtc": "2026-11-23T07:28:08.658241+00:00",
+  "sha256": "c4407cd0470bee1518aed4d228f903ce133ba592845d55b0e38a4bc780fa5249",
+  "metadata": {
+    "changelog": "## Initial Release (1.0.0)\n\n- Added a seamlessly integrated left-side category panel to the Apothic Attributes GUI with a native-style draggable scrollbar, track click, and mouse wheel scrolling.\n- Included 7 default categories (All, Combat, Defense, Survival, Mobility & Mining, Magic & Elements, Other).\n- Added hot-reloadable JSON config (config/apothic_attributes_categories.json) supporting custom categories, exact attribute IDs, mod namespaces, path keywords, item icons (icon), and custom 16x16 texture paths (iconTexture, including resource paths and local PNG files under config/apothic_attributes_categories_icons/).\n- Full zero-conflict compatibility with Apothic Attributes Whitelist.\n\n---\n\n## 首次发布（1.0.0）\n\n- 为神化属性（Apothic Attributes）界面新增向左一体式延展的分类面板，内置原生风格可拖拽滑块、点击轨道跳转与鼠标滚轮滚动。\n- 内置 7 个默认分类（全部、攻击、防御、生命与生存、移动与采集、魔法与元素、其他）。\n- 支持热重载的自定义分类配置（config/apothic_attributes_categories.json），可自由新增分类、配置精确属性 ID / 命名空间 / 关键词，并支持物品图标（icon）与自定义 16×16 贴图路径（iconTexture，支持资源路径及 config/apothic_attributes_categories_icons/ 下的本地 PNG）。\n- 与 Apothic Attributes Whitelist 零冲突兼容，白名单过滤结果自动联动各分类数量与列表。",
+    "changelogType": "markdown",
+    "displayName": "1.21.1-NeoForge-Apothic Attributes Categories-1.0.0",
+    "gameVersions": [
+      11779,
+      10150,
+      11135,
+      9638
+    ],
+    "releaseType": "release",
+    "relations": {
+      "projects": [
+        {
+          "slug": "apothic-attributes",
+          "type": "requiredDependency"
+        },
+        {
+          "slug": "apothic-attributes-whitelist",
+          "type": "optionalDependency"
+        }
+      ]
+    }
+  }
+}

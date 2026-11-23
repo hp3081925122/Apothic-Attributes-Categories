@@ -1,0 +1,24 @@
+<p>[ban:title_menu]</p>
+<p>[h1=简介]</p>
+<p><strong>神化属性：分类（Apothic Attributes Categories）</strong>是一款面向<a href="https://www.mcmod.cn/class/7281.html" target="_blank" title="MC百科：神化属性（Apothic Attributes）">神化属性（Apothic Attributes）</a>的客户端附属模组，在原版属性界面左侧无缝延展出一套原生风格的分类面板，内置滑块与滚轮支持、支持高度自定义分类与图标路径，并与<a href="https://www.curseforge.com/minecraft/mc-mods/apothic-attributes-whitelist" target="_blank" title="CurseForge：Apothic Attributes Whitelist">Apothic Attributes Whitelist</a>零冲突兼容。</p>
+<p>{{img:showcase_zh}}</p>
+<p>[h1=功能特点]</p>
+<ul>
+<li><strong>一体式向左延展面板</strong>：与神化属性原界面无缝衔接，配备一致的边框质感、左上角「分类」标题以及 6 格内凹图标列表；鼠标悬停右侧属性时，属性说明框正常显示在最上层不被遮挡。</li>
+<li><strong>原生滑块与滚轮支持</strong>：左侧提供与右侧风格一致的滚动条轨道与横纹滑块；当可见分类超过 6 个时自动激活，支持按住拖拽滑块、点击轨道跳转以及鼠标滚轮上下滚动。</li>
+<li><strong>开箱即用的 7 个默认分类</strong>：内置「全部、攻击、防御、生命与生存、移动与采集、魔法与元素、其他」，自动适配原版、神化属性及主流魔法与 RPG 模组的属性。</li>
+<li><strong>自定义分类与热重载</strong>：首次打开界面自动生成 <code>config/apothic_attributes_categories.json</code>，支持自由新增、删改或调整分类顺序，按「精确属性 ID → 模组命名空间 → 路径关键词 → 其他兜底」规则归类；保存后重新打开属性界面即自动热重载，无需重启游戏。</li>
+<li><strong>支持自定义图标路径</strong>：每个分类既可指定物品 ID（<code>icon</code>），也可通过 <code>iconTexture</code> 指定 16×16 贴图路径，支持资源包/模组贴图路径，也支持直接将 PNG 图片放入 <code>config/apothic_attributes_categories_icons/</code> 目录并通过 <code>file:图标名.png</code> 引用。</li>
+<li><strong>零冲突兼容白名单模组</strong>：不覆盖原刷新方法、不冲突注入点，与 Apothic Attributes Whitelist 同时安装时，白名单与黑名单的过滤结果会自动同步到每个分类的属性列表与数量统计中。</li>
+</ul>
+<p>[h1=客户端配置]</p>
+<p>配置文件位于 <code>config/apothic_attributes_categories-client.toml</code>：</p>
+<table>
+<tbody>
+<tr><th>配置项</th><th>默认值</th><th>说明</th></tr>
+<tr><td><code>enabled</code></td><td><code>true</code></td><td>是否启用属性界面左侧的分类面板</td></tr>
+<tr><td><code>hideEmptyCategories</code></td><td><code>true</code></td><td>是否自动隐藏当前无可见属性的分类（「全部」始终显示）</td></tr>
+<tr><td><code>rememberSelectedCategory</code></td><td><code>true</code></td><td>重新打开属性面板时是否记住上次选中的分类</td></tr>
+<tr><td><code>showCountInTooltip</code></td><td><code>true</code></td><td>悬停分类图标时是否在提示中显示该分类下的可见属性数量</td></tr>
+</tbody>
+</table>
