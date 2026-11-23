@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.hp.apothicattributescategories.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "apothic_attributes_categories.refmap.json",
+  "client": [
+    "AttributesGuiMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

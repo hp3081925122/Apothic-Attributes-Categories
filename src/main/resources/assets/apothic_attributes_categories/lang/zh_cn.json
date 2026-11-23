@@ -1,0 +1,11 @@
+{
+  "apothic_attributes_categories.category.all": "全部",
+  "apothic_attributes_categories.category.combat": "攻击",
+  "apothic_attributes_categories.category.defense": "防御",
+  "apothic_attributes_categories.category.survival": "生命与生存",
+  "apothic_attributes_categories.category.mobility": "移动与采集",
+  "apothic_attributes_categories.category.magic": "魔法与元素",
+  "apothic_attributes_categories.category.other": "其他",
+  "apothic_attributes_categories.gui.title": "分类",
+  "apothic_attributes_categories.tooltip.count": "共 %s 项"
+}
