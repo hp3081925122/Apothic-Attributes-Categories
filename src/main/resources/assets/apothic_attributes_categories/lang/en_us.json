@@ -1,0 +1,11 @@
+{
+  "apothic_attributes_categories.category.all": "All",
+  "apothic_attributes_categories.category.combat": "Combat",
+  "apothic_attributes_categories.category.defense": "Defense",
+  "apothic_attributes_categories.category.survival": "Survival",
+  "apothic_attributes_categories.category.mobility": "Mobility & Mining",
+  "apothic_attributes_categories.category.magic": "Magic & Elements",
+  "apothic_attributes_categories.category.other": "Other",
+  "apothic_attributes_categories.gui.title": "Tabs",
+  "apothic_attributes_categories.tooltip.count": "%s attributes"
+}
