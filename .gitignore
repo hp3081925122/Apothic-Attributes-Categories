@@ -1,0 +1,14 @@
+# 本地迁移与多版本工作树忽略规则
+迁移文档.md
+1201-forge-Apothic Attributes Categories/
+1211-neoforge-Apothic Attributes Categories/
+2612-neoforge-Apothic Attributes Categories/
+
+# Gradle & IDE
+.gradle/
+build/
+run/
+runs/
+.idea/
+*.iml
+*.log
