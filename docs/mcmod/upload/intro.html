@@ -7,11 +7,46 @@
 <li><strong>一体式向左延展面板</strong>：与神化属性原界面无缝衔接，配备一致的边框质感、左上角「分类」标题以及 6 格内凹图标列表；鼠标悬停右侧属性时，属性说明框正常显示在最上层不被遮挡。</li>
 <li><strong>原生滑块与滚轮支持</strong>：左侧提供与右侧风格一致的滚动条轨道与横纹滑块；当可见分类超过 6 个时自动激活，支持按住拖拽滑块、点击轨道跳转以及鼠标滚轮上下滚动。</li>
 <li><strong>开箱即用的 7 个默认分类</strong>：内置「全部、攻击、防御、生命与生存、移动与采集、魔法与元素、其他」，自动适配原版、神化属性及主流魔法与 RPG 模组的属性。</li>
-<li><strong>自定义分类与热重载</strong>：首次打开界面自动生成 <code>config/apothic_attributes_categories.json</code>，支持自由新增、删改或调整分类顺序，按「精确属性 ID → 模组命名空间 → 路径关键词 → 其他兜底」规则归类；保存后重新打开属性界面即自动热重载，无需重启游戏。</li>
-<li><strong>支持自定义图标路径</strong>：每个分类既可指定物品 ID（<code>icon</code>），也可通过 <code>iconTexture</code> 指定 16×16 贴图路径，支持资源包/模组贴图路径，也支持直接将 PNG 图片放入 <code>config/apothic_attributes_categories_icons/</code> 目录并通过 <code>file:图标名.png</code> 引用。</li>
+<li><strong>自定义分类与热重载</strong>：修改分类配置文件后重新打开属性界面即可自动热重载，无需重启游戏。</li>
 <li><strong>零冲突兼容白名单模组</strong>：不覆盖原刷新方法、不冲突注入点，与 Apothic Attributes Whitelist 同时安装时，白名单与黑名单的过滤结果会自动同步到每个分类的属性列表与数量统计中。</li>
 </ul>
-<p>[h1=客户端配置]</p>
+<p>[h1=配置文件写法]</p>
+<p>[h2=自定义分类（JSON）]</p>
+<p>首次打开属性界面后会自动生成 <code>config/apothic_attributes_categories.json</code>（默认已内置全部 7 个分类）以及本地图标目录 <code>config/apothic_attributes_categories_icons/</code>。在 <code>categories</code> 数组中新增、删改或调整条目顺序即可自定义分类，保存后重新打开属性面板即自动生效。</p>
+<pre><code>{
+  "categories": [
+    {
+      "id": "elemental",
+      "name": "元素伤害",
+      "icon": "minecraft:blaze_powder",
+      "iconTexture": "minecraft:textures/mob_effect/fire_resistance.png",
+      "attributes": [
+        "apothic_attributes:fire_damage",
+        "apothic_attributes:cold_damage"
+      ],
+      "namespaces": [
+        "irons_spellbooks"
+      ],
+      "keywords": [
+        "elemental",
+        "spell"
+      ]
+    }
+  ]
+}</code></pre>
+<table>
+<tbody>
+<tr><th>字段</th><th>说明</th></tr>
+<tr><td><code>id</code></td><td>分类唯一 ID（小写英文/数字/下划线）。内置保留 ID：<code>all</code>（全部）与 <code>other</code>（未匹配属性的兜底分类）。</td></tr>
+<tr><td><code>name</code></td><td>分类显示名称。可直接填写中文或英文文本（如 <code>"元素伤害"</code>），也可填写 <code>"lang:翻译键"</code> 实现多语言切换。</td></tr>
+<tr><td><code>icon</code></td><td>物品 ID（如 <code>"minecraft:diamond_sword"</code>），未配置 <code>iconTexture</code> 或贴图不存在时使用该物品图标。</td></tr>
+<tr><td><code>iconTexture</code></td><td>可选，优先于 <code>icon</code>，渲染为 16×16 贴图。支持资源包/模组贴图路径（如 <code>"minecraft:textures/mob_effect/strength.png"</code>），也支持将 PNG 放入 <code>config/apothic_attributes_categories_icons/</code> 目录后填写 <code>"file:my_icon.png"</code> 直接加载。</td></tr>
+<tr><td><code>attributes</code></td><td>精确属性 ID 列表（最高匹配优先级）。1.20.1 神化属性命名空间为 <code>attributeslib:</code>，1.21.1/26.1.2 为 <code>apothic_attributes:</code>。</td></tr>
+<tr><td><code>namespaces</code></td><td>按模组命名空间归类的列表（次优先级，例如 <code>"irons_spellbooks"</code>）。</td></tr>
+<tr><td><code>keywords</code></td><td>按属性 ID 路径关键词归类的列表（不区分大小写，第三优先级）；均未命中时自动归入 <code>other</code>。</td></tr>
+</tbody>
+</table>
+<p>[h2=客户端开关（TOML）]</p>
 <p>配置文件位于 <code>config/apothic_attributes_categories-client.toml</code>：</p>
 <table>
 <tbody>
